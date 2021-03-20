@@ -181,29 +181,3 @@
 
 @endsection
 
-@section('scripts')
-        <script>
-        var idEliminar=0;
-        $(document).ready(function(){
-                @if($message = Session::get('ErrorInsert'))
-                        $("#modalAgregar").modal('show');
-
-                @endif   
-                $(".btnEliminar").click(function(){
-                        idEliminar = $(this).data('id');
-                       
-                });
-                $(".btnModalEliminar").click(function(){
-                       $("#formEli_"+idEliminar).submit();
-                });
-                $(".btnEditar").click(function(){
-                        $("#idEdit").val ($(this).data('id'));
-                        $("#nameEdit").val ($(this).data('name'));
-                        $("#emailEdit").val ($(this).data('email'));
-                       
-                });
-                
-        });
-        </script>
-
-@endsection
