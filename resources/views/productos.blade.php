@@ -135,6 +135,11 @@
         </div>  
  </div>
  </div>
+ <form action="POST" action"/admin/productos/all" id="form1">
+        @csrf
+<input type="text" name="id" value="1">
+
+</form>
 
 @endsection
 
@@ -143,10 +148,9 @@
         var idEliminar=0;
         $(document).ready(function(){
                 $.ajax({
-                        url: '/productos/all',
+                        url: '/admin/productos/all',
                         method:'POST',
-                        data:{
-                                id:1
+                        data:{$("#form1").serialize();
                         }
                 }).done(function(res){
                         alert(res);

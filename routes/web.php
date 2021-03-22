@@ -27,6 +27,7 @@ Route::get ('/','AdminController@index');
 Route::get('/usuarios','UsersController@index');
 Route::post('/usuarios/edit','UsersController@editarUsuario');
 Route::get('/productos','ProductosController@index');
+Route::post('/productos/all','ProductosController@all');
 
 Route::resource('usuarios','UsersController');
 Route::resource('productos','ProductosController');
