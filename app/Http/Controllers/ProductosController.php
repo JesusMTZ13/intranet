@@ -5,11 +5,16 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Validator;
 use Image;
+use App\Producto;
 class ProductosController extends Controller
 {
    public function index()
    {
        return view('productos');
+   }
+   public function all(Request $request)
+   {
+       return "hola";
    }
    public function store(Request $request)
     {
@@ -35,10 +40,17 @@ class ProductosController extends Controller
                     $constraint->aspectRatio();
             });
             $red->save($destino.'/thumbs/'.$nombre);
-           dd('Si se subio');
-
-         
-            //return back() ->with('Listo','Se ha insertado correctamente');
+            $marca_agua= Image::make($destino.'/'.$nombre);
+            $logo= Image::make(public_path('img/logo.jpg'));
+            $marca_agua->insert($logo, 'bottom-right' ,1,1 );
+            $marca_agua->save();
+            $producto = Producto::create([
+                'nombre'=>$request->nombre,
+                'img'=>$request->nombre,
+                'stock'=>$request->stock,
+                'codigo'=>$request->codigo,
+            ]);
+           return back() ->with('Listo','Se ha insertado correctamente');
         }
     }
 }

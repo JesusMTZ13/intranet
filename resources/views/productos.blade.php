@@ -142,6 +142,17 @@
         <script>
         var idEliminar=0;
         $(document).ready(function(){
+                $.ajax({
+                        url: '/productos/all',
+                        method:'POST',
+                        data:{
+                                id:1
+                        }
+                }).done(function(res){
+                        alert(res);
+                });
+
+
                 @if($message = Session::get('ErrorInsert'))
                         $("#modalAgregar").modal('show');
 
