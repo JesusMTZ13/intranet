@@ -35,7 +35,7 @@
                     <span>Usuarios</span></a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="/admin/registrar">
+                <a class="nav-link" href="/admin/productos">
                     <i class="fas fa-fw fa-chart-area"></i>
                     <span>Registro de material</span></a>
             </li>
