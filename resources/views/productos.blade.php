@@ -138,7 +138,7 @@
  <form action="POST" action"/admin/productos/all" id="form1">
         @csrf
 <input type="text" name="id" value="1">
-
+<input type="mail" name="" >
 </form>
 
 @endsection
@@ -150,7 +150,7 @@
                 $.ajax({
                         url: '/admin/productos/all',
                         method:'POST',
-                        data:{$("#form1").serialize();
+                        data:$("#form1").serialize()
                         }
                 }).done(function(res){
                         alert(res);
