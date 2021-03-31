@@ -12,10 +12,7 @@ class ProductosController extends Controller
    {
        return view('productos');
    }
-   public function all(Request $request)
-   {
-       return "hola";
-   }
+  
    public function store(Request $request)
     {
         $validator= Validator::make($request->all(),[

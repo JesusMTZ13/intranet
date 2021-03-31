@@ -135,26 +135,14 @@
         </div>  
  </div>
  </div>
- <form action="POST" action"/admin/productos/all" id="form1">
-        @csrf
-<input type="text" name="id" value="1">
-<input type="mail" name="" >
-</form>
+ 
 
 @endsection
 
 @section('scripts')
         <script>
         var idEliminar=0;
-        $(document).ready(function(){
-                $.ajax({
-                        url: '/admin/productos/all',
-                        method:'POST',
-                        data:$("#form1").serialize()
-                        }
-                }).done(function(res){
-                        alert(res);
-                });
+       
 
 
                 @if($message = Session::get('ErrorInsert'))
